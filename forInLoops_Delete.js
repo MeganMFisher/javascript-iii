@@ -77,6 +77,15 @@ double = (obj) => {
 // Write a function called secrets that will take in an object. Create an empty string variable. Write a for in loop that loops over the object. If the property name starts with an 'sh', concatenate the value to the string variable. By the end of the for in loop, you should have a sentence, return that sentence.
 
 // CODE HERE
+secrets = (obj) => {
+  var str = '';
+  for(let key in obj) {
+    if(key[0] + key[1] === 'sh') {
+      str += obj[key]
+    }
+  }
+  return str;
+}
 
 
 // ========================
@@ -102,7 +111,10 @@ double = (obj) => {
 // Write a function called removePassword that takes in an object. Delete the property password and return the object.
 
 // CODE HERE
-
+removePassword = (obj) => {
+  delete obj.password;
+  return obj;
+}
 
 
 // ========================
@@ -118,7 +130,11 @@ var deleteTheBigNumbers = {
 }
 
 // CODE HERE
-
+for(let key in deleteTheBigNumbers) {
+    if(deleteTheBigNumbers[key] > 100) {
+      delete deleteTheBigNumbers[key]
+    }
+}
 
 // ========================
 
@@ -126,7 +142,14 @@ var deleteTheBigNumbers = {
 // Write a function called startsWithK that takes an object as a parameter. Write a for in loop to loop over the object. If any property name starts with k, delete that property. Return the updated object.
 
 // CODE HERE
-
+startsWithK = (obj) => {
+  for(let key in obj) {
+    if(key[0] === 'k') {
+      delete obj[key]
+    }
+  }
+  return obj;
+}
 
 
 // ========================
@@ -136,3 +159,11 @@ var deleteTheBigNumbers = {
 // (hint: the method includes() may be of use...)
 
 // CODE HERE
+hiddenTreasure = (obj) => {
+  for(let key in obj) {
+    if(!obj[key].includes('treasure')) {
+      delete obj[key]
+    }
+  }
+  return obj;
+}
