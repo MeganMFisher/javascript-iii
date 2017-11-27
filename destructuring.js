@@ -12,7 +12,7 @@ var carDetails = {
 }
 
 // CODE HERE
-
+var { color, make, model, year } = carDetails;
 
 // ========================
 
@@ -21,6 +21,7 @@ var carDetails = {
 
 function greeting( obj ) {
   // CODE HERE
+  var { firstName, lastName, title } = obj
   
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
 }
@@ -33,6 +34,10 @@ function greeting( obj ) {
 
   // CODE HERE
 
+  totalPopulation = (obj) => {
+    let { utah, california, texas, arizona } = obj; 
+    return utah + california + texas + arizona;
+  }
 
 // ========================
 
@@ -40,7 +45,12 @@ function greeting( obj ) {
 // Write a function called ingredients that will take in an object. This object will have 3 properties named carb, fat, and protein. The property values will be strings. Use object destructuring to save the property values to new variables. Push these new variables to an array and return the array. 
 
   // CODE HERE
-
+ingredients = (obj) => {
+  let arr = [];
+  let {carb, fat, protein} = obj;
+  arr.push(carb, fat, protein);
+  return arr;
+}
 
 // ========================
 
@@ -55,6 +65,9 @@ function greeting( obj ) {
 
   // CODE HERE
 
+largeNumbers = ({first, second, third}) => {
+  return Math.min(first, second, third);
+}
 
 // ========================
 
@@ -62,3 +75,8 @@ function greeting( obj ) {
 // Write a function called numberGroups that will take a destructured object as it's parameter. The object properties will be named a, b, and c and their values will be arrays of numbers. Find the longest array and return that array. 
 
   // CODE HERE
+
+  numberGroups = ({a, b, c}) => {
+    var longer = a.length > b.length ? a : b;
+    return longer.length > c.length ? longer : c
+  }
